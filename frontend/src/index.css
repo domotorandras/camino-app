@@ -1,0 +1,234 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  background-color: #f5f6fa;
+  color: #222;
+}
+
+#root {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  background: #8b6d5c;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-weight: bold;
+}
+
+button:hover {
+  background: #a58a78;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.app-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.sidebar {
+  width: 500px;
+  min-width: 300px;
+  background: #f4f1e9;
+  border-right: 2px solid #d4c9b1;
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 4px 0 12px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #4b3e2f;
+  font-family: 'Georgia', serif;
+  font-size: 1.6rem;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 0 #fff;
+}
+
+.sidebar-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 1rem;
+}
+
+.map {
+  flex: 1;
+}
+
+.click-on-the-map {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  opacity: 0.9;
+  z-index: 1000;
+}
+
+
+.stop-list {
+  flex: 1;
+  overflow-y: auto;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+}
+
+.stop-list-item {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  background: #fffdf5;
+  color: #111;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.05);
+}
+
+.stop-list-item:hover {
+  background: #f0e7d8;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+}
+
+.stop-list-item.selected {
+  background: #8b6d5c;
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.stop-detail {
+  margin-top: 1rem;
+  padding: 12px;
+  background: #fffdf5;
+  border-radius: 10px;
+  border: 1px solid #e3dcc7;
+  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.05);
+}
+
+.stop-detail-placeholder {
+  text-align: center;
+  color: #7a6b58;
+  font-style: italic;
+  padding: 1rem;
+}
+
+.stop-edit-form h3 {
+  color: #4b3e2f;
+  margin-bottom: 0.8rem;
+  font-family: "Georgia", serif;
+  text-shadow: 1px 1px 0 #fff;
+}
+
+.stop-edit-form label {
+  display: block;
+  margin-top: 6px;
+  font-weight: 600;
+  color: #3b2e20;
+  font-size: 0.9rem;
+}
+
+.stop-edit-form input,
+.stop-edit-form textarea {
+  width: 100%;
+  padding: 6px 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-top: 2px;
+  background: #fffdf9;
+  font-family: inherit;
+  font-size: 0.95rem;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+.stop-edit-form input:focus,
+.stop-edit-form textarea:focus {
+  border-color: #8b6d5c;
+  box-shadow: 0 0 4px rgba(139, 109, 92, 0.4);
+  outline: none;
+}
+
+.coord-fields {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.coord-fields div {
+  flex: 1;
+}
+
+.save-btn {
+  margin-top: 12px;
+  width: 100%;
+  background: #8b6d5c;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+.save-btn:hover {
+  background: #a58a78;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.stop-info h3 {
+  color: #4b3e2f;
+  margin-bottom: 0.4rem;
+  font-family: "Georgia", serif;
+}
+
+.stop-info p {
+  color: #3f372e;
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .app-container {
+    flex-direction: column;
+    height: 100vh;
+  }
+
+  .sidebar {
+    width: 100%;
+    min-width: 100%;
+    max-height: 45vh;
+    padding: 1rem;
+    overflow-y: auto;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .map {
+    width: 100%;
+    flex: 1;
+    min-height: 50vh;
+  }
+}
