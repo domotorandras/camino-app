@@ -131,8 +131,7 @@ Go to [http://localhost:5173](http://localhost:5173) in your browser.
 
 ### 2.1 Project Overview  
 
-**El Camino Planner** is a full-stack JavaScript web application designed to manage and visualize route stops for the *Camino de Santiago* pilgrimage.  
-It follows a **client–server architecture**, where:  
+The application follows a **client–server architecture**, where:  
 
 - The **frontend** (React + Vite) provides an interactive user interface with a map and sidebar.  
 - The **backend** (Node.js + Express) manages CRUD operations through REST API endpoints.  
